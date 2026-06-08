@@ -167,7 +167,13 @@ impl From<&HardwareInfo> for NetworkSignals {
 pub fn collect_entropy(cycles: usize, inner_loop: usize) -> EntropyData {
     use std::time::Instant;
 
+    // Helper to build the security-critical commitment string
+    fn build_commitment(nonce: &str, wallet: &str, node_peer_id: &str, entropy_json: &str) -> String {
+        format!("{}:{}:{}:{}", nonce, wallet, node_peer_id, entropy_json)
+    }
+
     let mut samples = Vec::with_capacity(cycles);
+
 
     for _ in 0..cycles {
         let start = Instant::now();
@@ -248,7 +254,7 @@ pub async fn attest_with_key(
 
     // Step 3: Build commitment with node binding
     let entropy_json = serde_json::to_string(&entropy)?;
-    let commitment_string = format!("{}:{}:{}:{}", nonce, wallet, node_peer_id, entropy_json);
+    let commitment_string = build_commitment(&nonce, &wallet, &node_peer_id, &entropy_json);
     let commitment_hash = Sha256::digest(commitment_string.as_bytes());
     let commitment = hex::encode(commitment_hash);
 
@@ -362,7 +368,7 @@ pub async fn attest(
 
     // Step 3: Build commitment with node binding
     let entropy_json = serde_json::to_string(&entropy)?;
-    let commitment_string = format!("{}:{}:{}:{}", nonce, wallet, node_peer_id, entropy_json);
+    let commitment_string = build_commitment(&nonce, &wallet, &node_peer_id, &entropy_json);
     let commitment_hash = Sha256::digest(commitment_string.as_bytes());
     let commitment = hex::encode(commitment_hash);
 
