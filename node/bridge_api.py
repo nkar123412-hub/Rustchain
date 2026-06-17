@@ -53,10 +53,23 @@ except ImportError:
 # Configuration
 # =============================================================================
 
-BRIDGE_DEFAULT_CONFIRMATIONS = int(os.environ.get("RC_BRIDGE_DEFAULT_CONFIRMATIONS", "12"))
-BRIDGE_MAX_CONFIRMATIONS = int(os.environ.get("RC_BRIDGE_MAX_CONFIRMATIONS", "1000"))
-BRIDGE_LOCK_EXPIRY_SECONDS = int(os.environ.get("RC_BRIDGE_LOCK_EXPIRY_SECONDS", "604800"))  # 7 days
-BRIDGE_MIN_AMOUNT_RTC = float(os.environ.get("RC_BRIDGE_MIN_AMOUNT_RTC", "1.0"))
+# Parse numeric env defensively so a malformed value (e.g. "abc") doesn't
+# crash the bridge API at import time (#7329).
+def _env_num(name, default, cast):
+    raw = os.environ.get(name)
+    if raw is None or raw == "":
+        return default
+    try:
+        return cast(raw)
+    except (TypeError, ValueError):
+        logging.getLogger(__name__).warning(
+            "Invalid %s=%r — falling back to %r", name, raw, default)
+        return default
+
+BRIDGE_DEFAULT_CONFIRMATIONS = _env_num("RC_BRIDGE_DEFAULT_CONFIRMATIONS", 12, int)
+BRIDGE_MAX_CONFIRMATIONS = _env_num("RC_BRIDGE_MAX_CONFIRMATIONS", 1000, int)
+BRIDGE_LOCK_EXPIRY_SECONDS = _env_num("RC_BRIDGE_LOCK_EXPIRY_SECONDS", 604800, int)  # 7 days
+BRIDGE_MIN_AMOUNT_RTC = _env_num("RC_BRIDGE_MIN_AMOUNT_RTC", 1.0, float)
 BRIDGE_UNIT = 1000000  # Micro-units per RTC
 DB_TIMEOUT = 5.0  # seconds: timeout for SQLite connection locks
 logger = logging.getLogger(__name__)
@@ -268,7 +281,18 @@ def validate_chain_address_format(chain: str, address: str) -> Tuple[bool, str]:
             return False, "Invalid Base address length"
         if not all(char in "0123456789abcdefABCDEF" for char in address[2:]):
             return False, "Invalid Base address hex"
-    
+
+    elif chain == "ethereum":
+        # Ethereum addresses: 0x + 40 hex chars (same format as Base/L2).
+        # Without this branch, "ethereum" fell through to `return True` and
+        # accepted any non-empty string as a payout address (#6629).
+        if not address.startswith("0x"):
+            return False, "Ethereum addresses must start with '0x'"
+        if len(address) != 42:
+            return False, "Invalid Ethereum address length"
+        if not all(char in "0123456789abcdefABCDEF" for char in address[2:]):
+            return False, "Invalid Ethereum address hex"
+
     return True, ""
 
 
@@ -599,21 +623,26 @@ def void_bridge_transfer(
 ) -> Tuple[bool, Dict[str, Any]]:
     """Void a bridge transfer and release associated lock."""
     cursor = db_conn.cursor()
-    
-    # Find the transfer
-    transfer = get_bridge_transfer_by_hash(db_conn, tx_hash)
-    if not transfer:
-        return False, {"error": "Bridge transfer not found"}
-    
-    if transfer["status"] not in ("pending", "locked", "confirming"):
-        return False, {
-            "error": f"Cannot void transfer with status '{transfer['status']}'",
-            "hint": "Only pending/locked/confirming transfers can be voided"
-        }
-    
     now = int(time.time())
     
     try:
+        cursor.execute("BEGIN IMMEDIATE")
+
+        # Find the transfer while holding the write lock. The guarded UPDATE
+        # below is still authoritative so a stale pre-transaction snapshot
+        # cannot overwrite a completed/failed/voided transfer.
+        transfer = get_bridge_transfer_by_hash(db_conn, tx_hash)
+        if not transfer:
+            db_conn.rollback()
+            return False, {"error": "Bridge transfer not found"}
+
+        if transfer["status"] not in ("pending", "locked", "confirming"):
+            db_conn.rollback()
+            return False, {
+                "error": f"Cannot void transfer with status '{transfer['status']}'",
+                "hint": "Only pending/locked/confirming transfers can be voided"
+            }
+
         # Update bridge transfer
         cursor.execute("""
             UPDATE bridge_transfers
@@ -622,7 +651,21 @@ def void_bridge_transfer(
                 voided_reason = ?,
                 updated_at = ?
             WHERE tx_hash = ?
+              AND status IN ('pending', 'locked', 'confirming')
         """, (voided_by, reason, now, tx_hash))
+
+        if cursor.rowcount != 1:
+            current = cursor.execute(
+                "SELECT status FROM bridge_transfers WHERE tx_hash = ?",
+                (tx_hash,),
+            ).fetchone()
+            db_conn.rollback()
+            if not current:
+                return False, {"error": "Bridge transfer not found"}
+            return False, {
+                "error": f"Cannot void transfer with status '{current[0]}'",
+                "hint": "Only pending/locked/confirming transfers can be voided",
+            }
         
         # Release associated lock
         cursor.execute("""

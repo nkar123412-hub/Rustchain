@@ -174,9 +174,40 @@ enum Commands {
     },
 }
 
+fn print_banner() {
+    let banner = r#"
+    ══════════════════════════════════════════════════════════════════
+       ____  _   _  ____   ____  _   _  _   _  ____  ____  ____  ____ 
+      |  _ \| | | ||  _ \ / ___|| | | || \ | ||  _ \|  _ \|  _ \|  _ \
+      | |_) || | | || |_) | |    | | | ||  \| || |_) || |_) || |_) || |_) |
+      |  _ < | |_| ||  _ <| |___ | |_| || |\  ||  _ <|  _ <|  _ <|  _ <
+      |_| \_\|___| ||_| \_\\____| \___/ |_| \_||_| \_\\_| \_\\_| \_\\_| \_\
+                                 THE FLAMEKEEPERS NETWORK
+    ══════════════════════════════════════════════════════════════════
+    "#;
+
+    #[cfg(windows)]
+    {
+        // Windows consoles often fail on Unicode. 
+        // We filter the banner to ensure only safe characters are printed
+        // or we use a fallback.
+        let safe_banner = banner.chars()
+            .map(|c| if c.is_ascii() { c } else { ' ' })
+            .collect::<String>();
+        println!("{}", safe_banner);
+    }
+
+    #[cfg(not(windows))]
+    {
+        println!("{}", banner);
+    }
+}
+
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    print_banner();
     let cli = Cli::parse();
+...[truncated]
 
     // Initialize logging
     let filter = if cli.verbose { "debug" } else { "info" };

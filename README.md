@@ -4,6 +4,8 @@
 
 # RustChain
 
+[![Build Status](https://github.com/Scottcjn/Rustchain/actions/workflows/ci.yml/badge.svg)](https://github.com/Scottcjn/Rustchain/actions/workflows/ci.yml)
+
 ### DePIN for Vintage Hardware — AI-Augmented Proof of Real Machines
 
 **The blockchain where old hardware outearns new hardware.**
@@ -20,7 +22,7 @@
 A PowerBook G4 from 2003 earns **2.5x** more than a modern Threadripper.
 A Power Mac G5 earns **2.0x**. A 486 with rusty serial ports earns the most respect of all.
 
-[Explorer](https://rustchain.org/explorer/) · [Machines Preserved](https://rustchain.org/preserved.html) · [Install Miner](#quickstart) · [Beginner Guide](docs/QUICKSTART.md) · [Manifesto](https://rustchain.org/manifesto.html) · [Whitepaper](docs/WHITEPAPER.md) · [Hire Us](CONSULTING.md)
+[Explorer](https://rustchain.org/explorer/) · [Machines Preserved](https://rustchain.org/preserved.html) · [Install Miner](#quickstart) · [Beginner Guide](docs/QUICKSTART.md) · [Hardware Requirements](docs/HARDWARE_REQUIREMENTS.md) · [Manifesto](https://rustchain.org/manifesto.html) · [Whitepaper](docs/WHITEPAPER.md) · [Hire Us](CONSULTING.md)
 
 Languages: [English](README.md) · [简体中文](docs/zh-CN/README.md) · [繁體中文](README_ZH-TW.md) · [Español](README_ES.md) · [Deutsch](README_DE.md) · [日本語](README_JA.md) · [Русский](README_RU.md) · [Tiếng Việt](README.vi.md) · [Português (BR)](README.pt-BR.md) · [हिन्दी](README_HI.md) · [Italiano](docs/it-IT/README.md) · [한국어](docs/ko-KR/README.md) · [中文 API 快速参考](docs/zh-CN/API.md)
 
@@ -153,7 +155,7 @@ RustChain powers an ecosystem where AI agents and humans collaborate:
 - **BoTTube** — AI-native video platform where bots create, curate, and engage
 - **[Beacon](https://github.com/Scottcjn/beacon-skill)** — Agent discovery protocol
 - **[TrashClaw](https://github.com/Scottcjn/trashclaw)** — Zero-dep local LLM agent
-- **Bounty system** — 25,875+ RTC paid to 260+ contributors, many AI-assisted
+- **Bounty system** — 64,000+ RTC paid to 1,000+ recipients ([live](https://rustchain.org/payouts.json)), many AI-assisted
 
 **This is what crypto + AI looks like when you build both instead of abandoning one for the other.**
 
@@ -189,9 +191,10 @@ This isn't a roadmap. This is deployed and running:
 | **Discovery** | [Beacon protocol](https://github.com/Scottcjn/beacon-skill) — agents find and negotiate with other agents, with a RustChain transport for Ed25519-signed RTC micropayments | Live |
 | **Execution** | [TrashClaw](https://github.com/Scottcjn/trashclaw) — zero-dep local LLM agent that runs on anything | Live |
 | **Social** | BoTTube — AI-native platform where agents create, trade, and engage | Live, 1,000+ videos |
-| **Bounties** | Agent-assisted contributions — AI helps humans earn RTC for real code | Live, 25,875+ RTC paid |
+| **Bounties** | Agent-assisted contributions — AI helps humans earn RTC for real code | Live, 64,000+ RTC paid ([live](https://rustchain.org/payouts.json)) |
 | **Certification** | [BCOS](https://rustchain.org/bcos/) — blockchain-certified open source verification | Live, 44 certs issued |
 | **Provenance** | [Proof of Provenance (RIP-0310)](rips/docs/RIP-0310-proof-of-provenance.md) — binds agent identity + verified hardware to published content | Spec published ([DOI](https://doi.org/10.5281/zenodo.20502069)) |
+| **Frameworks** | Drop-in tools so any agent can query the network — [LangChain](https://github.com/Scottcjn/langchain-rustchain) (`pip install langchain-rustchain-tools`), plus CrewAI / AutoGen / Agno / smolagents in [`integrations/`](integrations/) | Live |
 
 ### Why Hardware Verification Matters for Agents
 
@@ -267,9 +270,9 @@ Payments run over the [Beacon](https://github.com/Scottcjn/beacon-skill) RustCha
 | 20+ miners attesting | `curl -fsS https://rustchain.org/api/miners` |
 | 44 BCOS certificates issued | [Certified repos](https://rustchain.org/bcos/) |
 | 6 hardware fingerprint checks per machine | [Fingerprint docs](docs/attestation_fuzzing.md) |
-| 25,875+ RTC paid to 260+ contributors | [Public ledger](https://github.com/Scottcjn/rustchain-bounties/issues/104) |
+| 64,000+ RTC paid to 1,000+ recipients ([live counter](https://rustchain.org/payouts.json)) | [Public ledger](https://github.com/Scottcjn/rustchain-bounties/issues/104) |
 | Code merged upstream into OpenSSL (master + 5 release branches) | [#30437](https://github.com/openssl/openssl/pull/30437), [#30452](https://github.com/openssl/openssl/pull/30452) |
-| Open PRs on CPython, curl, wolfSSL, Ghidra | [Portfolio](https://github.com/Scottcjn/Scottcjn/blob/main/external-pr-portfolio.md) |
+| Open PRs on CPython, curl, wolfSSL, Ghidra | Listed in the upstream project PR trackers |
 
 ---
 
@@ -282,6 +285,9 @@ curl -sSL https://raw.githubusercontent.com/Scottcjn/Rustchain/main/install-mine
 # Dry-run: preview installer actions without installing or mining
 curl -sSL https://raw.githubusercontent.com/Scottcjn/Rustchain/main/install-miner.sh | bash -s -- --dry-run
 ```
+
+The miner is installed by this script. It is not distributed as a
+`rustchain-miner` PyPI package, so use the installer above for miner setup.
 
 Works on Linux (x86_64, ppc64le, aarch64, mips, sparc, m68k, riscv64, ia64, s390x), macOS (Intel, Apple Silicon, PowerPC), IBM POWER8, and Windows. If it runs Python, it can mine.
 
@@ -334,7 +340,7 @@ Start with the [wallet setup guide](docs/WALLET_SETUP.md) if you are not sure wh
 | Option | Use it for | Where |
 |---|---|---|
 | Miner install wallet | Earning mining rewards to a named wallet | `install-miner.sh --wallet YOUR_WALLET` |
-| Browser light client | Loading a wallet and signing transfers locally in the browser | [web/light-client](web/light-client/) |
+| Wallet user guide | Balance checks, safe transfers, and signed-transfer guidance | [docs/WALLET_USER_GUIDE.md](docs/WALLET_USER_GUIDE.md) |
 | Desktop GUI wallet | Creating or restoring a local wallet from this repo | `wallet/rustchain_wallet_secure.py` |
 | CLI tooling | Scripted wallet operations from a checkout | `tools/rustchain_wallet_cli.py` |
 | Agent/Base wallet docs | Coinbase Agentic Wallets, x402, and Base linking | [web/wallets.html](web/wallets.html) |
@@ -432,7 +438,7 @@ This is how a healthy token economy works. Rewards aren't anchored to a nominal 
 | Transfer | 0.0001 RTC |
 | Withdrawal to Ergo | 0.001 RTC + Ergo tx fee |
 
-Full tokenomics detail: [WHITEPAPER §6](docs/WHITEPAPER.md).
+Full tokenomics detail: [WHITEPAPER §6](docs/WHITEPAPER.md). Scenario analysis: [What If: RTC Fundamentals — Coverage Analysis](docs/WHAT_IF_RTC_FUNDAMENTALS.md) (*analysis, not a promise*).
 
 ## Security
 
@@ -483,6 +489,7 @@ Every contribution earns RTC tokens. Browse [open bounties](https://github.com/S
 | **PSE Hardware Entropy** | Preprint | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18623922-blue)](https://doi.org/10.5281/zenodo.18623922) |
 | **RAM Coffers** | Preprint | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18321905-blue)](https://doi.org/10.5281/zenodo.18321905) |
 | **RPI: Resonant Permutation Inference** | Preprint | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19271983-blue)](https://doi.org/10.5281/zenodo.19271983) |
+| **Incentive Moves Engagement, Not Authorship** (agent-economy self-audit) | Working paper v1.0 | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20559770-blue)](https://doi.org/10.5281/zenodo.20559770) |
 
 ---
 
@@ -526,5 +533,82 @@ Named after a 486 laptop with oxidized serial ports that still boots to DOS and 
 Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and the [Bounty Board](https://github.com/Scottcjn/rustchain-bounties) for active tasks and rewards.
 
 
+
+---
+
+### Troubleshooting
+
+<details>
+<summary><b>Miner not connecting to node</b></summary>
+
+Run the miner with --dry-run first to verify connectivity without submitting work:
+
+```bash
+./clawrtc-miner --dry-run
+```
+
+Check node health:
+```bash
+curl -fsS https://rustchain.org/health
+```
+</details>
+
+<details>
+<summary><b>Balance check returns 0 or error</b></summary>
+
+Verify your miner name is correct:
+```bash
+curl -fsS "https://rustchain.org/wallet/balance?miner_id=YOUR_MINER_NAME"
+```
+
+The miner name must exactly match the name used during first attestation.
+</details>
+
+<details>
+<summary><b>Miner service won't start (systemd / launchd)</b></summary>
+
+Linux (systemd):
+```bash
+sudo systemctl status clawrtc-miner
+sudo journalctl -u clawrtc-miner --no-pager -n 50
+```
+
+macOS (launchd):
+```bash
+launchctl list | grep clawrtc
+```
+</details>
+
+<details>
+<summary><b>Transfer stuck in "pending" state</b></summary>
+
+Check the pending ledger:
+```bash
+curl -fsS "https://rustchain.org/wallet/history?miner_id=YOUR_MINER_NAME&limit=20"
+```
+
+Node operators can inspect the admin-only pending ledger with:
+
+```bash
+python tools/pending_ops.py --node https://rustchain.org --admin-key "$RC_ADMIN_KEY" list
+```
+
+Transitions require epoch settlement - check current epoch:
+```bash
+curl -fsS https://rustchain.org/epoch
+```
+</details>
+
+<details>
+<summary><b>Common installation issues</b></summary>
+
+- **Rust toolchain not found**: Install via curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+- **Build fails on Windows**: Use WSL2 or MSYS2 with proper C toolchain
+- **Permission denied on miner binary**: Run chmod +x ./clawrtc-miner
+
+For more details, see the [Beginner Quickstart](docs/QUICKSTART.md).
+</details>
+
+For deeper debugging, see the [CLI Wallet Walkthrough](docs/CLI.md) and [Local Devnet Guide](docs/DEVNET.md).
 ---
 *Documentation improved for readability.*
