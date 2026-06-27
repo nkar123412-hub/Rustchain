@@ -118,25 +118,16 @@ def init_replay_defense_schema():
 def compute_fingerprint_hash(fingerprint: Dict) -> str:
     """
     Compute a cryptographic hash of the fingerprint data.
-    This creates a unique identifier for the fingerprint payload.
-
-    Args:
-        fingerprint: The fingerprint dictionary containing checks and data
-
-    Returns:
-        SHA-256 hash (hex) of the normalized fingerprint
+    The timestamp is EXCLUDED from the hash to ensure that the same hardware 
+    fingerprint produces the same hash across different submissions.
     """
-    if fingerprint is None:
-        return ""
-    
-    if not isinstance(fingerprint, dict):
+    if fingerprint is None or not isinstance(fingerprint, dict):
         return ""
 
     # Normalize the fingerprint for consistent hashing
     checks = fingerprint.get('checks', {})
     normalized = {
         'checks': {},
-        'timestamp': fingerprint.get('timestamp', 0),
         'bridge_type': fingerprint.get('bridge_type', '')
     }
     

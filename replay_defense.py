@@ -68,8 +68,7 @@ try:
         get_replay_defense_report,
         REPLAY_WINDOW_SECONDS,
         MAX_FINGERPRINT_SUBMISSIONS_PER_HOUR,
-        ENTROPY_HASH_COLLISION_TOLERANCE,
-        DB_PATH
+        ENTROPY_HASH_COLLISION_TOLERANCE
     )
     HAVE_REPLAY_DEFENSE = True
 except ImportError as e:
