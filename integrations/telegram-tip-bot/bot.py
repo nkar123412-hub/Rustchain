@@ -25,6 +25,7 @@ import asyncio
 from pathlib import Path
 from datetime import datetime
 from typing import Optional, Dict, List
+from social_mining_bridge import SocialMiningBridge
 
 import requests
 from telegram import Update, BotCommand
@@ -54,6 +55,7 @@ LARGE_TRANSFER_THRESHOLD = 10.0  # RTC - requires confirmation
 # Storage
 DATA_DIR = Path.home() / ".rustchain-tip-bot"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
+social_bridge = SocialMiningBridge()
 WALLETS_FILE = DATA_DIR / "wallets.json"
 RATE_LIMIT_FILE = DATA_DIR / "rate_limits.json"
 
@@ -306,11 +308,11 @@ async def cmd_deposit(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
+
 async def cmd_tip(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle /tip command."""
+    """Handle /tip command using Social Mining Bridge."""
     user = update.effective_user
     
-    # Parse arguments: /tip @user amount
     if len(context.args) < 2:
         await update.message.reply_text(
             "Usage: /tip @user <amount>\n"
@@ -318,13 +320,11 @@ async def cmd_tip(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
     
-    # Get recipient
     recipient_mention = context.args[0]
     if not recipient_mention.startswith("@"):
         await update.message.reply_text("Recipient must start with @ (e.g., @alice)")
         return
     
-    # Get amount
     try:
         amount = float(context.args[1])
     except ValueError:
@@ -335,83 +335,40 @@ async def cmd_tip(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"Minimum tip is {MIN_TIP_AMOUNT} RTC")
         return
     
-    # Rate limit check
     allowed, remaining = check_rate_limit(user.id)
     if not allowed:
         await update.message.reply_text(f"Rate limited. Try again in {remaining}s.")
         return
     
-    # Get wallets
-    sender_wallet = get_or_create_wallet(user.id, username=user.username or "")
-    
-    # Check balance
-    balance = get_balance(sender_wallet['address'])
-    if balance < amount:
-        await update.message.reply_text(
-            f"Insufficient balance.\n"
-            f"Your balance: {balance:.4f} RTC\n"
-            f"Required: {amount:.4f} RTC"
-        )
-        return
-    
-    # Resolve recipient: check if mentioned via reply or if we can find them
-    # in our wallets by scanning for a matching Telegram user in the chat
+    # Resolve recipient
     recipient_user = None
-
-    # If the message is a reply, tip the replied-to user
     if update.message.reply_to_message and update.message.reply_to_message.from_user:
         recipient_user = update.message.reply_to_message.from_user
 
-    # Try to resolve @username from entities
     if not recipient_user and update.message.entities:
         for entity in update.message.entities:
             if entity.type == "text_mention" and entity.user:
                 recipient_user = entity.user
                 break
 
-    if not recipient_user:
-        # Look up username in our local wallet store
-        target_username = recipient_mention.lstrip("@").lower()
-        wallets = load_wallets()
-        found_uid = None
-        for uid_str, w in wallets.items():
-            if w.get("username", "").lower() == target_username:
-                found_uid = int(uid_str)
-                break
-        if found_uid:
-            recipient_wallet = wallets[str(found_uid)]
-        else:
-            await update.message.reply_text(
-                f"Cannot resolve {recipient_mention}. "
-                f"The recipient must have used /start with this bot first, "
-                f"or reply to their message with /tip <amount>."
-            )
-            return
+    # Use the Social Mining Bridge for the transfer to collect pool fees
+    sender_username = f"@{user.username or user.id}"
+    recipient_username = recipient_mention
+    memo = f"Telegram tip from {user.first_name or user.username or user.id}"
+    
+    result = social_bridge.handle_tip(sender_username, recipient_username, amount, memo)
+
+    if not result.get("ok"):
+        await update.message.reply_text(f"❌ Tip failed: {result.get('error')}")
     else:
-        recipient_wallet = get_or_create_wallet(recipient_user.id)
-
-    # Execute the transfer
-    result = send_signed_transfer(
-        sender_wallet['address'],
-        recipient_wallet['address'],
-        amount,
-        sender_wallet['private_key'],
-        sender_wallet['public_key'],
-        memo=f"Telegram tip from {user.first_name or user.username or user.id}"
-    )
-
-    if "error" in result:
-        await update.message.reply_text(f"Transfer failed: {result['error']}")
-    elif result.get("ok"):
         await update.message.reply_text(
-            f"**Tip Sent!**\n\n"
+            f"✅ **Tip Sent!**\n\n"
             f"To: {recipient_mention}\n"
             f"Amount: {amount:.4f} RTC\n"
-            f"Signature: `{result.get('signature', 'Ed25519')[:16]}...`",
+            f"Fee: {amount * 0.08:.4f} RTC (to pool)\n"
+            f"Tx: `{result.get('tip_tx', 'N/A')[:16]}...`",
             parse_mode="Markdown"
         )
-    else:
-        await update.message.reply_text(f"Transfer failed: {result}")
 
 
 async def cmd_withdraw(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -544,6 +501,25 @@ async def cmd_rain(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Main
 # =============================================================================
 
+
+async def cmd_social(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /social command to show social mining stats."""
+    stats = social_bridge.get_social_stats()
+    
+    top = stats['top_creators']
+    platforms = stats['platform_stats']
+    
+    lines = ["🌟 **Social Mining Leaderboard**\n"]
+    for i, entry in enumerate(top, 1):
+        lines.append(f"{i}. `{entry['agent_id']}` — **{entry['total_earned']:.4f} RTC**")
+    
+    lines.append("\n📊 **Platform Distribution**")
+    for plat, data in platforms.items():
+        lines.append(f"- {plat}: {data['total_reward']:.4f} RTC ({data['count']} actions)")
+    
+    await update.message.reply_text("\n".join(lines), parse_mode="Markdown")
+
+
 def main():
     """Start the bot."""
     if not BOT_TOKEN:
@@ -565,6 +541,7 @@ def main():
     app.add_handler(CommandHandler("tip", cmd_tip))
     app.add_handler(CommandHandler("withdraw", cmd_withdraw))
     app.add_handler(CommandHandler("leaderboard", cmd_leaderboard))
+    app.add_handler(CommandHandler("social", cmd_social))
     app.add_handler(CommandHandler("rain", cmd_rain))
     
     # Set bot commands

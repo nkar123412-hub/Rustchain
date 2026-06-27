@@ -1,0 +1,1002 @@
+[
+  {
+    "miner_id": "7b69ed2403d72215bb1f61c28721d2b730e128d414390dc2369deb53140ea439",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "e0c43398a78fc5aafc3d0354fbbf1ca6d52eab4c1c028da0de7fefe7f56287c9",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "23d0b9b503889dcda18e11d844d05b0f77b2565ef93a3c57a6fbc9fb4e6ef121",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "7042d164845c413f912375f5f7c9b62fa956fdf468d576d76bd0d114a0220a0d",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "2a0e44c0128e60ead22beda3add88ad8b0aef920df4011debb8f729506efe5b9",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "6a9784d94daa3a91080012466d879d64f3c96e1c28495dad320c716ab6ea5ed3",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "9bd8883882201a1553d93fb670d5a25667bf10af088d114a81f1d7f56627744b",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "2ee35122d6b22db979147a065e4ebcd21ae994cadf3f510f014d494538b2480b",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "34f39a29ab4ffb471785a05c7c2e131f33d8abd764abe799744c49d848ab3436",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "ef54d34b474f1665c724f6bdd61c14d16d6b405aaa8c01effb79f1b8b9b81050",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "652aa938cd20af1fc41ebe46153a7bcf642553395f86a4ac5f63aabc135759ad",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "95f377e1195e67db6b18f75126c12979d00445eebeee2d1b4842a609904a4ae2",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "2bec5ec428233ec06ba23ce9d3d4516f37367f6ed3a230b45e19abccd74d3e17",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "cf78061abe312afd7f4176fb341a8a79bcae78967f22ce343be8fb75ae8af28b",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "38dd7452a97767c243bd6c035af68e9f345fe01a64ac708acf24abe1c4d1e415",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "ebe5d3e131c0f94aafae6cb91f21a43a531f71cdd86a9e560ad40e3bcd24b8f5",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "9218c707694c4d880103db8c02e54853524f94ee3d279a4210d71fb8cfdfea07",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "7935aa4607c4c707b6cd7ba7a1717c9fd0457f3adfa796b6ec1d4afe7e3a73d9",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "9f4d0b3138fe4ab22eb6845d9d13aaf27f9486944bcd21af3d66af0a22b1c587",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "2e1b3e679521668743da31716967ca658688a9e407b061718ca2c7a967243dcb",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "1debe98a56b310f1d4a7c64b5ddb1331fafb2f0be9e259cf17ca624cb0ff758d",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "56f228546237c62a395faa49716f8d650ffb99a589e402ff8ec682dc4b185db1",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "65761a51f53d1f5ff3ea260c417e193d5908e7a5f22b318ddbb324cb3f5cb5a6",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "b03cc9aca6b4672dd8c7ba145053fa37a6a04ad47bf3fa179aa2e495b686774e",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "c4175310b6253409a7712448bee2d01c1bf8b09cd787537fe37879f06347b894",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "4a8b608362c272bb79953cb21c617da7701ea31a51d7e347aad9ab9b2180caf4",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "37b80295bfe03fb34ad68c292d91532f0074cc84a843b4199b9ed700174a6f7c",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "80391cc0f151edc2fd40ca46a165761e239aa07d21c19b9f3d18cb44f26f6929",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "a1cc8c532b67f9bb978d90b45d26846177c433c1a9e5adcf13c281ac0672a684",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "65bd9aa02c78201119dee4668fbf24282838f9b39a45e5c7b1a75aea9cd94179",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "470f9c0e261998d0fe94fe31df2611e7cd80aa0174acfd1c13730f9f06f935d4",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "982926c678e9637f3e93cf3efad874e824b4041ad9d52bbbd5c7e0f11b390e2e",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "363a5a1ca21bf2b22de1b8a621db09bc542978def51951aa1814d725a0025dc2",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "6ea9f0c427ecbab13c73d9ba1443d398f4bc424024ac9b50f32658c14e8985df",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "7758c7cb4f957831f66e83c00c66b8b6c0012606d4bc9d4eb396470a21ab3d29",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "354f2a365c3d2116dec3ccb7eddb434b66445bea2522df5fe54989971f18d777",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "e481a8efe48ac564753c97693a2a9f46eeb9dfa5f7a211d292cfe14d549af3a0",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "c4c296971b69b0652435a3f0b947a1f17a6147eba6557fbf53d8f0df03c16da7",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "088f0d6c1a2be75e068b4416975fd4891ca354dfd68cd8842205c69f206bde67",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "a9c235d8ed7f03077fe762b51e03ac42207670a50035a545667fe80e45b4e94d",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "9e575b3a0efb9fece66a82eae14f85cc4e21ba9387500af04f8de396f9e6fb45",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "f43eb34e046e1c63e82a7e458ceb9f49171c9888580f03ab9b2073a88db0b27f",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "7a468fc72caa202ee00bf9c1b8c12b8d7dbe5e8f2aeccff6b5f01cb38f3f75ba",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "be2904e776e5ccf0a281bc4bb3cfcfddd8a40f3cd04c5415c3d41f92b0139c67",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "bb4904afd61b4d87640336f58e1a754667a738723c67b1eb3b593d792edea5b3",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "a34fbaa2f2304ba90199ce9ea5526507026695fcf719feb7cf572ea85b586911",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "5d602e012573976ef4f3f0673ba5375b0f8ba5a16b7b5fe4df4bd2ee6875dffb",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "856b3d8f3d8b5db96a7ca8c40201add92cde73a346515c7496042310de6e8bad",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "75523b56529a5d3fac30fa7cff3e3353e9afe24bc142fc78c5d5a3df57a0161d",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "c17316729a91eb2e0f2563f8f4804a615f6e6dcec93b6b0d84881244da3c6006",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "88d3573f227241243541d8663e7db9c7aaaf174168e7b4fe23340bd37d2112c2",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "6e45d8cfac994cb4c887415db8ebb446f72055f99620aa0c373e798e81134a65",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "e3e686cd78cb3b9791dee437470e37c5b98cce271804bf647d52a12728646565",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "e5b0fa10ebcf54a6b1844ab65df95b5925fd70fd3a1759284a1d46eb61c82846",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "d18e30d27561e54594010f25faf38217b5e33ab8aec7564a26a8c0b891aa2f95",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "1416dc1155370f921de81eef91169f0afbf01c0cad9adbfa757e60579d947cf3",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "aa3e0b49f5eead1345cd923bd9a890dad897663698fd48a24610e69c5cd1bcd6",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "4b2a5802896ed84910d20c2c729c06bf40277fd9729d12beab8d9132c801ef54",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "3786ac6df7fd1df1adf6e963ea06c888dff6810a7998f75010c1f0b2a5528898",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "3e95ec626116dd81ab751bf6baf8a29b0d90883737830aba9dc7f674c32c2e01",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "3997769647bf4d4ce60e0e9f09f40827a2cb7ff055dc826ad2695d8970a41c56",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "cf767c4c9b72ab6ad54b849415d9c13a898cc10e19c6eb3a9e3816c9e3fb4107",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "428a95cfef102c26f8f99cbc4dc7d36a2bc9d893610da2cf80d2ac61b01ef61e",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "b8f0486f1fc7e11d4829361251d028ffe01171ffbe593f3fd91befec142529d0",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "bb80b78d7e2600f2c182040a34ac317cfec0f72a90cdcbb1813e82b21572e4ee",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "d48303d0d396901c80e4ca35dbc781078a8ef328d7276ec651ff5971493fa3b6",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "4f5364c904292d9afb891dfd45f662d7e04ab1d43138b3c1e6e3efc3668c2308",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "2de2e9ebe04cca92ef9a4a1707e5f2ce3f742074fae57a7723bf8cfa1f0cfcd7",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "34bb992edde0de24d9e416545c580412734373532cf60be1178ca2bc5d35e4c2",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "67073a12d2e17a8f233ba2f6a65f10be2d16a8c64444aaa22e088f8e4dba8cd5",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "d65a3c5ec68d5f478a1c09d59b2ccf6b2832f451ff6199806f0e47add6e92cfd",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "5141c91661e3838e2030712cdcaec93ef9607fa0e7000e6bf775563d8cc279cc",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "159c06441bfb35f222227ccec61f2a37e5970822ccf071d32b2640241a131932",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "a70631c78b936fa2a1724dff044a8e310d3a6f9bf5ca6ea28780577b804471d9",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "7ba22683c35db49ce9933f1c40bf830873b34eb8b0aa79f16cf03b001a9ffd0a",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "d9436f8832a2e231b0652fea0cc14d0dc267440d100fd824bde09e9fa11b17e1",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "92d54efb06150ea58918b3e675efebe7aa857ef8fd903837e77b831f8ff98481",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "cf79a69e14d07228b2373191371c4670f36ce9ecefc8d12ba86a9721637a8144",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "452a24da3d1f74a873bf6b072cad904902b5bb7261538d331481e72c1d4b69af",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "3764d08819d99ecd5cd303ce992749626c1e3025ac325fccdc19b9c6eee36521",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "77af30bb96368fd91d086fbf01aba28df54fe732e7eb311f00bf63c7c3ecdea1",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "f0c12846b186fb8928f8dc4a4f033abcc0076747392b4bc9f3538872bfb75346",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "84dbd8936b81f79710a39821fb52d42781f16c969ec9f56fb08e2153495ec815",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "a573874fbc8da5c44e72a0fb1f550e5e1d871bed083b97ec34d483192aa12e2b",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "bff5454249430ae5e432109509d018f64c03edf38d64cf32ec8347c9e9cd5145",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "3e7ff850689b1da1fef3d3ca9e5ee14f4618f6a99db97901abf38db149ecded7",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "8b5b9594b5187faad100177a5fd6ec9500863f3f14a5980f37202a51b2e1af80",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "bf5eafa78552b69d1bed58d6f41055609af96fd855ca45d2be70d2343409d6b2",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "2779958d77c76c5de0747f8bd107bc350f435f0f5a0fad94a6239d69c2e2525a",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "985f7f8d6c666297c6f39140d05f59213ef12a6f77676276718fd4b872f96647",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "052466e8d4f823460fc13faf4f2c2185f76557140f2b150df1a138600c1cb62a",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "ed334ad8f3d229a97ca011dc6611f6186217cd8a09bbdc362fc6e15b5b7a217b",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "2e350743c0f71504b5cdb2fd20e693ceff8c546c7bcf19fd5c760f087f43ff86",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "5a3775875ee44031370845b11c77f9dbd9f2a1585aea33871eabbe4d15b4e6c9",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "3fae64f69968aaab25127c92c8e87a7125edbeb1bb552c6a7a2b174e09d7017d",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "ed864da812154aa6029dfc423c3472af78c15d37503b416c2ef560c3fa858ef1",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "a8d9c2e066785d9a9f9cf3ba59a04053f0fdb268e2dec635470fb8c1edd922ee",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "c23e3e5073156eb0164d1d221e7223a96311aa911bf01b37890402ec93ac2da5",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "c35067ced3b145c3388bbed8a6b8bfb5bd3655ce59e005e343406307de81a85e",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  },
+  {
+    "miner_id": "d5b44c9769f06ecad8ecf2389916e2d9062b56d9d3b9355f3539e69bae4f4365",
+    "status": "failed",
+    "response": {
+      "code": "IP_RATE_LIMIT",
+      "error": "rate_limited",
+      "message": "Too many unique miners from this IP address",
+      "ok": false
+    }
+  }
+]
